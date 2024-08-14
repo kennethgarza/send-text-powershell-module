@@ -12,7 +12,9 @@ Powershell module can be used to send text over a Remote Desktop Connection, whe
 ```powershell
 Send-Text "Text to send"
 ```
-Default timeout is 5 seconds, within the timeout navigate to where you want the text to be typed out.  And wait.  DO NOT MESS WITH THE MOUSE OR KEYBOARD AS IT WILL DISRUPT THE TYPING.
+Default timeout is 5 seconds, within the timeout navigate to where you want the text to be typed out.  
+Wait.  
+DO NOT MESS WITH THE MOUSE OR KEYBOARD AS IT WILL DISRUPT THE TYPING.
 
 ## Other Usages
 
