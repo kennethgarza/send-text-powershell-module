@@ -45,6 +45,17 @@ chmod +x send-text.sh
 ./send-text.sh "Text to send" 10
 ```
 
+#### Special Characters
+
+When using special characters such as `{` or `}`, wrap your string in single quotes to prevent the shell from interpreting them:
+
+```zsh
+./send-text.sh 'Hello { world }'
+./send-text.sh 'config { key: "value" }' 10
+```
+
+Using double quotes will cause the shell to interpret `{` and `}` as glob or brace-expansion characters, which may produce unexpected results.
+
 ## Caveats
 * `Send-Text` (PowerShell module) works on Windows platforms as it uses `System.Windows.Forms`. Use `send-text.sh` for macOS zsh.  
 * Some non latin characters do not work.  I tried with Chinese characters and it failed.
