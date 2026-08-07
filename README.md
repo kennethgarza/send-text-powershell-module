@@ -26,14 +26,47 @@ Send-Text -Text "text to send" -Seconds 10
 Send-Text "text to send" 10
 ```
 
-## Caveates
-* I assume this works only on windows platforms as it uses the `System.Windows.Forms`.  
+## macOS zsh Version
+
+A shell version is included for macOS at `send-text.sh` in the repository root.
+
+### Setup
+1. Ensure Terminal has Accessibility permissions in **System Settings > Privacy & Security > Accessibility**.
+2. Make script executable if needed:
+
+```zsh
+chmod +x send-text.sh
+```
+
+### Usage
+
+```zsh
+./send-text.sh "Text to send"
+./send-text.sh "Text to send" 10
+```
+
+#### Special Characters
+
+When using special characters such as `{` or `}`, wrap your string in single quotes to prevent the shell from interpreting them:
+
+```zsh
+./send-text.sh 'Hello { world }'
+./send-text.sh 'config { key: "value" }' 10
+```
+
+Using double quotes will cause the shell to interpret `{` and `}` as glob or brace-expansion characters, which may produce unexpected results.
+
+## Caveats
+* `Send-Text` (PowerShell module) works on Windows platforms as it uses `System.Windows.Forms`. Use `send-text.sh` for macOS zsh.  
 * Some non latin characters do not work.  I tried with Chinese characters and it failed.
 * Special Characters needs to be wrapped in `{}`, for example 
 
 ```powershell
 ## want to send "Hello $$$"
 Send-Text "Hello {$}{$}{$}"
+
+## want to send "Hello*World"
+Send-Text 'Hello{*}World'
 ```
 
 ## Other cool stuff
