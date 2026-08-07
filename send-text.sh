@@ -10,7 +10,7 @@ fi
 text="$1"
 seconds="${2:-5}"
 
-if ! [[ "$seconds" =~ '^[0-9]+$' ]]; then
+if ! [[ "$seconds" == <-> ]]; then
   echo "Error: seconds must be a non-negative integer."
   exit 1
 fi
