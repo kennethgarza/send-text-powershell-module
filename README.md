@@ -64,6 +64,9 @@ Using double quotes will cause the shell to interpret `{` and `}` as glob or bra
 ```powershell
 ## want to send "Hello $$$"
 Send-Text "Hello {$}{$}{$}"
+
+## want to send "Hello*World"
+Send-Text 'Hello{*}World'
 ```
 
 ## Other cool stuff
