@@ -15,10 +15,10 @@ if ! [[ "$seconds" =~ '^[0-9]+$' ]]; then
   exit 1
 fi
 
-timeout="$seconds"
-while (( timeout > 0 )); do
-  echo "Sending Text in ${timeout} seconds"
-  (( timeout-- ))
+countdown="$seconds"
+while (( countdown > 0 )); do
+  echo "Sending Text in ${countdown} seconds"
+  (( countdown-- ))
   sleep 1
 done
 
