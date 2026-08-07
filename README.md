@@ -26,8 +26,27 @@ Send-Text -Text "text to send" -Seconds 10
 Send-Text "text to send" 10
 ```
 
+## macOS zsh Version
+
+A shell version is included for macOS at `/home/runner/work/send-text-powershell-module/send-text-powershell-module/send-text.sh`.
+
+### Setup
+1. Ensure Terminal has Accessibility permissions in **System Settings > Privacy & Security > Accessibility**.
+2. Make script executable if needed:
+
+```zsh
+chmod +x send-text.sh
+```
+
+### Usage
+
+```zsh
+./send-text.sh "Text to send"
+./send-text.sh "Text to send" 10
+```
+
 ## Caveates
-* I assume this works only on windows platforms as it uses the `System.Windows.Forms`.  
+* `Send-Text` (PowerShell module) works on Windows platforms as it uses `System.Windows.Forms`. Use `send-text.sh` for macOS zsh.  
 * Some non latin characters do not work.  I tried with Chinese characters and it failed.
 * Special Characters needs to be wrapped in `{}`, for example 
 
